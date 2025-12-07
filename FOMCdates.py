@@ -2,10 +2,6 @@ import pandas as pd
 
 def get_fomc_dates():
     """
-    Returns known FOMC meeting dates.
-    Update this list periodically from: 
-    https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
-    
     Returns:
       pd.DataFrame with columns ['date', 'year']
     """
@@ -45,11 +41,6 @@ def get_next_fomc_date(df):
     
     return future_dates.iloc[0]['date'].date()
 
-
-# ======================================================
-# Example usage
-# ======================================================
-
 if __name__ == "__main__":
     print("Loading FOMC meeting dates...\n")
     
@@ -62,4 +53,5 @@ if __name__ == "__main__":
     
     # Get next FOMC meeting
     next_fomc = get_next_fomc_date(fomc_df)
+
     print(f"Next FOMC meeting date: {next_fomc}")
